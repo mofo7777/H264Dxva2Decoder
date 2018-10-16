@@ -18,13 +18,13 @@
 * sometimes ATOM_TYPE_AVCC is not the first atom in ATOM_TYPE_STSD, need to loop (can be others)
 
 ### NALU
-* NaluLenghtSize == 1 not handle
+* NaluLenghtSize == 1 not handle (never encountered such mp4 file)
 * handle only case where SPS/PPS does not change
 * Remove Emulation Prevention Byte is not done (don't see any problem right now)
 * just handle NAL_UNIT_CODED_SLICE and NAL_UNIT_CODED_SLICE_IDR, ignore others
 * normally, use same variable name as h264 spec : good for comparing and implementing
 * need a better check of min/max values according to h264 spec
-* pic_order_cnt_type == 1 is not handle
+* pic_order_cnt_type == 1 is not handle (never encountered such mp4 file)
 * frame_mbs_only_flag is not handle
 * rbsp_trailing_bits is not used (don't see any problem right now)
 * pic_order_present_flag is not handle
