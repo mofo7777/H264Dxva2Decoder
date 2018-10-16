@@ -2,13 +2,13 @@
 
 ## In progress
 
-## limitations
+### limitations
 
-### GPU
+#### GPU
 * GPU : DXVA2_ModeH264_E only, try use other when 4K
 * GPU : minimal -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
 
-### FILE
+#### FILE
 * FILE : CMFByteStream : has SeekHigh but not used when decoding, only parsing (SeekFile == SeekHigh ... need to remove one), see GetNextSample
 
 * ATOM : just use needed atoms
