@@ -1,6 +1,8 @@
 # H264Dxva2Decoder
 
-## In progress
+## Program
+
+This program parses mp4 file (avcc format only), then parses NAL Unit, decodes slices using IDirectXVideoDecoder, then display pictures using IDirectXVideoProcessor. This program just uses Microsoft Windows SDK for Windows 7, visual studio community 2017, Mediafoundation API and C++.
 
 ## limitations
 
@@ -32,6 +34,7 @@
 * redundant_pic_cnt_present_flag is not handle
 * pic_scaling_matrix_present_flag is not handle
 * memory_management_control_operation is not used
+* SP/SI slice type are not handle
 
 ### DECODING
 * only use DXVA_Slice_H264_Short not DXVA_Slice_H264_Long (GPU must handle it) see ConfigBitstreamRaw
