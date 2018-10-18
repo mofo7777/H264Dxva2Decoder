@@ -9,6 +9,8 @@ This program parses mp4 file (avcc format only), then parses NAL Unit, decodes s
 ### GPU
 * DXVA2_ModeH264_E only, try use other when 4K
 * minimal GPU -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
+* the GPU decoding is OK with NVIDIA GeForce 700 series
+* With Intel HD Graphics 4000, there are artifacts. Need to investigate
 
 ### FILE
 * CMFByteStream : has SeekHigh but not used when decoding, only parsing (SeekFile == SeekHigh ... need to remove one), see GetNextSample
