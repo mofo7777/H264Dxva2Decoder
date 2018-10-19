@@ -7,17 +7,17 @@ This program parses mp4 file (avcc format only), then parses NAL Unit, decodes s
 ## limitations
 
 ### GPU
-* only test DXVA2_ModeH264_E
-* minimal GPU -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
+* only tested DXVA2_ModeH264_E GPU mode
+* minimal GPU for NVIDIA cards -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
 * the GPU decoding is OK with NVIDIA GeForce 700 series
-* With Intel HD Graphics 4000, seems to be OK
+* With Intel HD Graphics 4000, seems to be OK too
 
 ### FILE
-* CMFByteStream : has SeekHigh but not used when decoding, only parsing (SeekFile == SeekHigh ... need to remove one), see GetNextSample
+* CMFByteStream : has SeekHigh but not used when decoding, only parsing (SeekFile == SeekHigh ... need to remove one). See GetNextSample : with big files, decoding will fail arbitrarily during streaming, if file > 2 Go
 
 ### ATOM
 * just use needed atoms
-* sample time not used : use 1000 / frame rate - 4
+* sample time not used : use 1000 / frame rate - 4 (custom approximation)
 * just use the first video track found
 * sometimes ATOM_TYPE_AVCC is not the first atom in ATOM_TYPE_STSD, need to loop (can be others)
 
@@ -39,14 +39,14 @@ This program parses mp4 file (avcc format only), then parses NAL Unit, decodes s
 * SP/SI slice type are not handle
 
 ### DECODING
-* only use DXVA_Slice_H264_Short not DXVA_Slice_H264_Long (GPU must handle it) see ConfigBitstreamRaw
+* only use DXVA_Slice_H264_Short, not DXVA_Slice_H264_Long (GPU must handle it) see ConfigBitstreamRaw
 * no interlacing
 * video only (no audio processing)
 * complete gpu acceleration only
-* Quanta Matrix just use default matrix values
+* Quanta Matrix just use default matrix values (never encountered mp4 file with custom matrix values)
 * long term reference and list reordering is not handle (never encountered such mp4 file)
 
 ### DISPLAY
 * SetVideoProcessStreamState should use values from mp4 file, here default for all
 * just use D3DFMT_X8R8G8B8 output format and D3DFMT_NV12 input format
-* resize window to video size without checking screen resolution
+* resize window to video size without checking screen resolution. For big video, windows position can be bad, depend on your screen resolution
