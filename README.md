@@ -42,7 +42,7 @@ This program parses mp4 file (avcc format only), then parses NAL Unit, decodes s
 * only use DXVA_Slice_H264_Short, not DXVA_Slice_H264_Long (GPU must handle it) see ConfigBitstreamRaw
 * no interlacing
 * video only (no audio processing)
-* complete gpu acceleration only
+* complete gpu acceleration only, no software fallback
 * Quanta Matrix just use default matrix values (never encountered mp4 file with custom matrix values)
 * long term reference and list reordering is not handle (never encountered such mp4 file)
 
