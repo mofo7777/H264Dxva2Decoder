@@ -119,9 +119,6 @@ HRESULT CH264NaluParser::ParseNaluHeader(CMFBuffer& pVideoBuffer){
 	DWORD dwNaluSize;
 	DWORD dwSize = pVideoBuffer.GetBufferSize();
 
-	BYTE bt[50] = {0};
-	memcpy(bt, pVideoBuffer.GetStartBuffer(), 50);
-
 	if(dwSize <= 4){
 		TRACE((L"ParseNalHeader : buffer size <= 4"));
 		return hr;
@@ -576,7 +573,7 @@ HRESULT CH264NaluParser::ParseCodedSlice(){
 	/*if(memory_management_control_operation == 5){
 	  prevFrameNumOffset = 0;
 	  tempPicOrderCnt = PicOrderCnt(CurrPic);
-	  TopFieldOrderCnt = TopFieldOrderCnt – tempPicOrderCnt
+	  TopFieldOrderCnt = TopFieldOrderCnt Â– tempPicOrderCnt
 	}
 	else
 	*/
