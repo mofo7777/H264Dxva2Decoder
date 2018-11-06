@@ -424,7 +424,7 @@ HRESULT CH264NaluParser::ParsePPS(){
 
 		for(uint ix = 0; ix < max_count; ix++){
 
-		temp = bs->GetBits(1);
+		temp = m_cBitStream.GetBits(1);
 
 		if(temp){
 		scaling_list(ix, ix < 6 ? 16 : 64, bs);
