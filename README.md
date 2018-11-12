@@ -12,9 +12,6 @@ This program parses mp4 file (avcc format only), then parses NAL Unit, decodes s
 * the GPU decoding is OK with NVIDIA GeForce 700 series
 * With Intel HD Graphics 4000, seems to be OK too
 
-### FILE
-* CMFByteStream : has SeekHigh but not used when decoding, only parsing (SeekFile == SeekHigh ... need to remove one). See GetNextSample : with big files, decoding will fail arbitrarily during streaming, if file > 2 Go
-
 ### ATOM
 * just use needed atoms
 * sample time not used : use 1000 / frame rate - 4 (custom approximation)
