@@ -47,7 +47,7 @@ HRESULT CH264AtomParser::ParseMp4(){
 	HRESULT hr;
 	ROOT_ATOM sRootAtom = {0};
 
-	IF_FAILED_RETURN(hr = (m_pByteStream ? S_OK : MF_E_ALREADY_INITIALIZED));
+	IF_FAILED_RETURN(hr = (m_pByteStream ? S_OK : MF_E_NOT_INITIALIZED));
 
 	try{
 
