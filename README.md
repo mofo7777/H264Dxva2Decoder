@@ -40,7 +40,6 @@ This program parses mp4 file (avcc format only), then parses NAL Unit, decodes s
 * no interlacing
 * video only (no audio processing)
 * complete gpu acceleration only, no software fallback
-* Quanta Matrix just use default matrix values (never encountered mp4 file with custom matrix values)
 * long term reference and list reordering is not handle (never encountered such mp4 file)
 
 ### DISPLAY
