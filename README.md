@@ -14,9 +14,10 @@ This program parses mp4 file (avcc format only), then parses NAL Unit, decodes s
 
 ### ATOM
 * just use needed atoms
-* sample time not used : use 1000 / frame rate - 4 (custom approximation)
+* sample time not used for display : use 1000 / frame rate - 4 (custom frame rate approximation)
 * just use the first video track found
-* sometimes ATOM_TYPE_AVCC is not the first atom in ATOM_TYPE_STSD, need to loop (can be others)
+* Partial Sync Sample Atom are not handle
+* Multiple stds Atom are not handle
 
 ### NALU
 * NaluLenghtSize == 1 not handle (never encountered such mp4 file)
