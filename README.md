@@ -29,7 +29,6 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 * pic_order_cnt_type == 1 is not handle (never encountered such mp4 file)
 * frame_mbs_only_flag is not handle
 * rbsp_trailing_bits is not used (don't see any problem right now)
-* pic_order_present_flag is not handle
 * num_slice_groups_minus1 is not handle
 * redundant_pic_cnt_present_flag is not handle
 * pic_scaling_matrix_present_flag is not handle
