@@ -21,7 +21,6 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 
 ### NALU
 * NaluLenghtSize == 1 not handle (never encountered such mp4 file)
-* handle only case where SPS/PPS does not change
 * Remove Emulation Prevention Byte is not done (don't see any problem right now)
 * just handle NAL_UNIT_CODED_SLICE and NAL_UNIT_CODED_SLICE_IDR, ignore others
 * normally, use same variable name as h264 spec : good for comparing and implementing
@@ -41,7 +40,7 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 * video only (no audio processing)
 * complete gpu acceleration only, no software fallback
 * multiple sub slice in slice is not handled
-* long term reference and list reordering is not handle (never encountered such mp4 file)
+* long term reference and list reordering are not handle (never encountered such mp4 file)
 
 ### DISPLAY
 * SetVideoProcessStreamState should use values from mp4 file, here default for all
