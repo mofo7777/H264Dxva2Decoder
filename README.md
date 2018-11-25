@@ -13,34 +13,35 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 * With Intel HD Graphics 4000, seems to be OK too
 
 ### ATOM
-* just use needed atoms
-* sample time not used for display : use 1000 / frame rate - 4 (custom frame rate approximation)
-* just use the first video track found
+* just uses needed atoms
+* sample time is not used for display : use 1000 / frame rate - 4 (custom frame rate approximation)
+* just uses the first video track found
 * partial sync sample atom are not handle
 * multiple stds atom are not handle
 
 ### NALU
-* NaluLenghtSize == 1 not handle (never encountered such mp4 file)
+* NaluLenghtSize == 1 is not handled (never encountered such mp4 file)
 * Remove Emulation Prevention Byte is not done (don't see any problem right now)
-* just handle NAL_UNIT_CODED_SLICE and NAL_UNIT_CODED_SLICE_IDR, ignore others
-* normally, use same variable name as h264 spec : good for comparing and implementing
-* need a better check of min/max values according to h264 spec
-* pic_order_cnt_type == 1 is not handle (never encountered such mp4 file)
-* frame_mbs_only_flag is not handle
+* just handles NAL_UNIT_CODED_SLICE and NAL_UNIT_CODED_SLICE_IDR, ignore others
+* normally, uses same variable name as h264 spec : good for comparing and implementing
+* needs a better check of min/max values according to h264 spec
+* pic_order_cnt_type == 1 is not handled (never encountered such mp4 file)
+* frame_mbs_only_flag is not handled
 * rbsp_trailing_bits is not used (don't see any problem right now)
-* num_slice_groups_minus1 is not handle
-* redundant_pic_cnt_present_flag is not handle
-* pic_scaling_matrix_present_flag is not handle
+* num_slice_groups_minus1 is not handled
+* redundant_pic_cnt_present_flag is not handled
+* pic_scaling_matrix_present_flag is not handled
 * memory_management_control_operation is not used
 * SP/SI slice type are not handle
+* only handles chroma_format_idc == 1
 
 ### DECODING
-* only use DXVA_Slice_H264_Short, not DXVA_Slice_H264_Long (GPU must handle it) see ConfigBitstreamRaw
+* only used DXVA_Slice_H264_Short, not DXVA_Slice_H264_Long (GPU must handle it) see ConfigBitstreamRaw
 * no interlacing
 * video only (no audio processing)
 * complete gpu acceleration only, no software fallback
 * multiple sub slice in slice is not handled
-* long term reference and list reordering are not handle (never encountered such mp4 file)
+* long term reference and list reordering are not handled (never encountered such mp4 file)
 
 ### DISPLAY
 * SetVideoProcessStreamState should use values from mp4 file, here default for all
