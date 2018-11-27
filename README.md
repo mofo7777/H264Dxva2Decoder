@@ -40,7 +40,6 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 * no interlacing
 * video only (no audio processing)
 * complete gpu acceleration only, no software fallback
-* multiple sub slice in slice is not handled
 * long term reference and list reordering are not handled (never encountered such mp4 file)
 
 ### DISPLAY
