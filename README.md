@@ -29,7 +29,7 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 * rbsp_trailing_bits is not used (don't see any problem right now)
 * num_slice_groups_minus1 is not handled
 * redundant_pic_cnt_present_flag is not handled
-* pic_scaling_matrix_present_flag is not handled
+* pic_scaling_matrix_present_flag is not used
 * memory_management_control_operation is not used
 * SP/SI slice type are not handle
 * only handles chroma_format_idc == 1
