@@ -17,6 +17,7 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 * just uses the first video track found
 * partial sync sample atom is not handled
 * multiple stds atom are not handled
+* edts/elst atoms are not handled
 
 ### NALU
 * NaluLenghtSize == 1 is not handled (never encountered such mp4 file)
