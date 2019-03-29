@@ -21,7 +21,6 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 
 ### NALU
 * NaluLenghtSize == 1 is not handled (never encountered such mp4 file)
-* Remove Emulation Prevention Byte is not done (don't see any problem right now)
 * just handles NAL_UNIT_CODED_SLICE and NAL_UNIT_CODED_SLICE_IDR, ignore others
 * normally, uses same variable name as h264 spec : good for comparing and implementing
 * needs a better check of min/max values according to h264 spec
