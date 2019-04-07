@@ -4,13 +4,46 @@
 
 This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, decodes slices using IDirectXVideoDecoder, then display pictures using IDirectXVideoProcessor. This program just uses Microsoft Windows SDK for Windows 7, visual studio community 2017, Mediafoundation API and C++. You need at minimum Windows Seven, and a GPU able to fully hardware decode h264 video format. This program does not implement all h264 features, see limitations below.
 
+## Windows OS executable
+
+If you are not software enginer, or do not want the source code, you can try the executable. Feedbacks are welcome, especially with AMD GPU cards.
+
+Minimal configuration :
+* Windows Vista/Windows7/Windows8/Windows10
+* A graphic card with DXVA2_ModeH264_E GPU mode (you can use somme tools like DXVA Checker to know if your GPU is compliant)
+* The Microsoft Visual C++ 2017 Runtime (x86/x64) installed
+
+Movie file :
+* Open .mp4 or .mov files extension
+* Only the first video track found will be played
+* The audio is not processed
+
+Using the video player :
+* Drag and drop movie file, or with Menu : File->Open File
+* Enter/Exit fullscreen : double click on movie
+* Keyboard
+  * escape : exit fullscreen
+  * space : play/pause
+  * p : play
+  * s : stop
+  * numpad 0 : seeks forward 10 minutes
+  * numpad 1 : seeks forward 1 minutes
+  * numpad 2 : seeks forward 2 minutes
+  * numpad 3 : seeks forward 3 minutes
+  * numpad 4 : seeks forward 4 minutes
+  * numpad 5 : seeks forward 5 minutes
+  * numpad 6 : seeks forward 6 minutes
+  * numpad 7 : seeks forward 7 minutes
+  * numpad 8 : seeks forward 8 minutes
+  * numpad 9 : seeks forward 9 minutes
+
 ## limitations
 
 ### GPU
 * only tested DXVA2_ModeH264_E GPU mode
 * minimal GPU for NVIDIA cards -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
 * the GPU decoding is OK with NVIDIA GeForce 700 series
-* With Intel HD Graphics 4000, seems to be OK too
+* With Intel HD Graphics, it's ok with startcode 0x00,0x00,0x01 but not with 0x000x00,0x00,0x01 (see #define USE_WORKAROUND_FOR_INTEL_GPU)
 
 ### ATOM
 * sample time is not used for display : use 1000 / frame rate - 4 (custom frame rate approximation)
@@ -44,4 +77,3 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 ### DISPLAY
 * SetVideoProcessStreamState should use values from mp4 file, here default for all
 * just use D3DFMT_X8R8G8B8 output format and D3DFMT_NV12 input format
-* resize window to video size without checking screen resolution. For big video, windows position can be bad, depend on your screen resolution
