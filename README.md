@@ -10,7 +10,7 @@ If you are not software enginer, or do not want the source code, you can try the
 
 Minimal configuration :
 * Windows Vista/Windows7/Windows8/Windows10
-* A graphic card with DXVA2_ModeH264_E GPU mode (you can use somme tools like DXVA Checker to know if your GPU is compliant)
+* A graphic card with DXVA2_ModeH264_E GPU mode (you can use some tools like DXVA Checker to know if your GPU is compliant)
 * The Microsoft Visual C++ 2017 Runtime (x86/x64) installed
 
 Movie file :
