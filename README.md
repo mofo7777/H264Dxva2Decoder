@@ -64,7 +64,7 @@ Using the video player :
 * redundant_pic_cnt_present_flag is not handled
 * pic_scaling_matrix_present_flag is not used
 * memory_management_control_operation is not used
-* SP/SI slice type are not handle
+* SP/SI slice type are not handled
 * only handles chroma_format_idc == 1
 
 ### DECODING
