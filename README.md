@@ -17,6 +17,7 @@ Movie file :
 * Open .mp4 or .mov files extension
 * Only the first video track found will be played
 * The audio is not processed
+* Subtitles are not processed
 
 Using the video player :
 * Drag and drop movie file, or with Menu : File->Open File
@@ -26,6 +27,8 @@ Using the video player :
   * space : play/pause
   * p : play
   * s : stop
+  * f : enter/exit fullscreen
+  * right arrow : step one frame
   * numpad 0 : seeks forward 10 minutes
   * numpad 1 : seeks forward 1 minutes
   * numpad 2 : seeks forward 2 minutes
@@ -43,7 +46,7 @@ Using the video player :
 * only tested DXVA2_ModeH264_E GPU mode
 * minimal GPU for NVIDIA cards -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
 * the GPU decoding is OK with NVIDIA GeForce 700 series
-* With Intel HD Graphics, it's ok with startcode 0x00,0x00,0x01 but not with 0x000x00,0x00,0x01 (see #define USE_WORKAROUND_FOR_INTEL_GPU)
+* the GPU decoding is OK with Intel HD Graphics 4000 and 510
 
 ### ATOM
 * sample time is not used for display : use 1000 / frame rate - 4 (custom frame rate approximation)
