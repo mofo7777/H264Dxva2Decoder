@@ -2,7 +2,7 @@
 
 ## Program
 
-This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, decodes slices using IDirectXVideoDecoder, then display pictures using IDirectXVideoProcessor. This program just uses Microsoft Windows SDK for Windows 7, visual studio community 2017, Mediafoundation API and C++. You need at minimum Windows Seven, and a GPU able to fully hardware decode h264 video format. This program does not implement all h264 features, see limitations below.
+This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, decodes slices using IDirectXVideoDecoder, then display pictures using IDirectXVideoProcessor. This program just uses Microsoft Windows SDK for Windows 7, visual studio community 2017, Mediafoundation API and C++ (optional Directx SDK (june 2010)). You need at minimum Windows Seven, and a GPU able to fully hardware decode h264 video format. This program does not implement all h264 features, see limitations below.
 
 ## Windows OS executable
 
