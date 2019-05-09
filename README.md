@@ -49,11 +49,11 @@ Using the video player :
 * the GPU decoding is OK with Intel HD Graphics 4000 and 510
 
 ### ATOM
-* sample time is not used for display : use 1000 / frame rate - 4 (custom frame rate approximation)
 * just uses the first video track found
 * partial sync sample atom is not handled
 * multiple stds atom are not handled
 * edts/elst atoms are not handled
+* does not handle inconsistent timestamps
 
 ### NALU
 * NaluLenghtSize == 1 is not handled (never encountered such mp4 file)
