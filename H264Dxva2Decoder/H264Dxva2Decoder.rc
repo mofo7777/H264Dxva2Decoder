@@ -1,0 +1,84 @@
+//----------------------------------------------------------------------------------------------
+// H264Dxva2Decoder.rc
+//----------------------------------------------------------------------------------------------
+#include "Resource.h"
+#include <Winuser.h>
+#include <CommCtrl.h>
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Open File",       ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",            ID_FILE_EXIT
+    END
+    POPUP "Control"
+    BEGIN
+        MENUITEM "Play",            ID_CONTROL_PLAY
+        MENUITEM "Pause",           ID_CONTROL_PAUSE
+        MENUITEM "Stop",            ID_CONTROL_STOP
+    END
+    POPUP "Dxva2"
+    BEGIN
+        MENUITEM "Settings",        ID_DXVA2PARAMETERS_SETTINGS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_ICON                ICON                    "app.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG DIALOGEX 0, 0, 285, 258
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_NOPARENTNOTIFY
+CAPTION "Dxva2 Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",ID_FILTER_BRIGHTNESS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,31,28,218,13
+    CONTROL         "",ID_FILTER_CONTRAST,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,31,56,218,13
+    CONTROL         "",ID_FILTER_HUE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,31,84,218,13
+    CONTROL         "",ID_FILTER_SATURATION,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,31,111,218,13
+    CONTROL         "",ID_FILTER_NOISE_REDUCTION,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,31,138,218,13
+    CONTROL         "",ID_FILTER_EDGE_ENHANCEMENT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,31,165,218,13
+    CONTROL         "",ID_FILTER_ANAMORPHIC_SCALING,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_DISABLED | WS_TABSTOP,31,195,218,13
+    LTEXT           "Brightness",IDC_STATIC,15,14,37,8
+	LTEXT           "Contrast", IDC_STATIC, 15, 44, 32, 8
+    LTEXT           "Hue",IDC_STATIC,15,72,15,8
+    LTEXT           "Saturation",IDC_STATIC,15,99,39,8
+    LTEXT           "Noise Reduction",IDC_STATIC,15,126,54,8
+    LTEXT           "Edge Enhancement",IDC_STATIC,15,153,67,8
+    LTEXT           "Anamorphic Scaling",IDC_STATIC,15,180,66,8
+    PUSHBUTTON      "Reset to default",IDC_BUTTON_RESET,103,225,71,14,WS_DISABLED
+    CTEXT           "0",IDC_STATIC_LBRIGHTNESS,12,29,17,8
+    CTEXT           "0",IDC_STATIC_RBRIGHTNESS,255,29,16,8
+    CTEXT           "0",IDC_STATIC_LCONTRAST,12,56,17,8
+    CTEXT           "0",IDC_STATIC_LHUE,12,84,17,8
+    CTEXT           "0",IDC_STATIC_LSATURATION,12,111,17,8
+    CTEXT           "0",IDC_STATIC_LNOISE_REDUCTION,12,138,17,8
+    CTEXT           "0",IDC_STATIC_LEDGE_ENHANCEMENT,12,165,17,8
+    CTEXT           "0",IDC_STATIC_LANAMORPHIC_SCALING,12,195,17,8
+    CTEXT           "0",IDC_STATIC_RCONTRAST,255,56,16,8
+    CTEXT           "0",IDC_STATIC_RHUE,255,84,16,8
+    CTEXT           "0",IDC_STATIC_RSATURATION,255,111,16,8
+    CTEXT           "0",IDC_STATIC_RNOISE_REDUCTION,255,138,16,8
+    CTEXT           "0",IDC_STATIC_REDGE_ENHANCEMENT,255,165,16,8
+    CTEXT           "0",IDC_STATIC_RANAMORPHIC_SCALING,255,195,16,8
+    CONTROL         "BT 601",IDC_RADIO_BT601,"Button",BS_AUTORADIOBUTTON | WS_DISABLED | WS_GROUP,14,219,38,10
+    CONTROL         "BT 709",IDC_RADIO_BT709,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,14,233,38,10
+END
