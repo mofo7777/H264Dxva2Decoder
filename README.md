@@ -39,6 +39,16 @@ Using the video player :
   * numpad 7 : seeks forward 7 minutes
   * numpad 8 : seeks forward 8 minutes
   * numpad 9 : seeks forward 9 minutes
+* Menu -> Dxva2 Settings
+  * Brightness
+  * Contrast
+  * Hue
+  * Saturation
+  * Noise Reduction
+  * Edge Enhancement
+  * Anamorphic Scaling
+  * BT601/BT709
+  
 
 ## limitations
 
@@ -54,6 +64,7 @@ Using the video player :
 * multiple stds atom are not handled
 * edts/elst atoms are not handled
 * does not handle inconsistent timestamps
+* does not handle moof atom (fragmented mp4)
 
 ### NALU
 * NaluLenghtSize == 1 is not handled (never encountered such mp4 file)
