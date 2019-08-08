@@ -533,7 +533,7 @@ void CDxva2Decoder::HandlePOC(const DWORD dwIndex, const PICTURE_INFO& Picture, 
 
 void CDxva2Decoder::ErasePastFrames(const LONGLONG llTime){
 
-	for(deque<PICTURE_PRESENTATION>::const_iterator it = m_dqPicturePresentation.begin(); it != m_dqPicturePresentation.end();){
+	for(deque<PICTURE_PRESENTATION>::const_iterator it = m_dqPicturePresentation.begin(); it != m_dqPicturePresentation.end()){
 
 		if(it->llTime <= llTime)
 			it = m_dqPicturePresentation.erase(it);
