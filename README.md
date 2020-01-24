@@ -94,5 +94,6 @@ Using the video player :
 * SetVideoProcessStreamState should use values from mp4 file, here default for all
 * just use D3DFMT_X8R8G8B8 output format and D3DFMT_NV12 input format
 
+### Class diagram
 
 ![ClassDiagram](./Media/ClassDiagram.jpg)
