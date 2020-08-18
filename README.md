@@ -59,7 +59,7 @@ Using the video player :
 * minimal GPU for NVIDIA cards -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
 * the GPU decoding is OK with NVIDIA GeForce 700 series
 * the GPU decoding is OK with Intel HD Graphics 4000 and 510
-* For ATI cards, see issue : Dxva2Renderer.cpp - Line: 372 hr = E_NOINTERFACE. I've made a quick implementation to use IDirectXVideoProcessor instead of IDXVAHD_VideoProcessor. Feddback are welcome. The source code is in the directory SourceCodeForAtiCards : H264Dxva2DecoderSourceCodeForAtiCard.7z (Visual Studio Community 2017).
+* For ATI cards, see issue : Dxva2Renderer.cpp - Line: 372 hr = E_NOINTERFACE. I've made a quick implementation to use IDirectXVideoProcessor instead of IDXVAHD_VideoProcessor. Feedback are welcome. The source code is in the directory SourceCodeForAtiCards : H264Dxva2DecoderSourceCodeForAtiCard.7z (Visual Studio Community 2017).
 
 ### ATOM
 * just uses the first video track found
