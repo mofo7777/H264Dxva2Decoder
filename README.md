@@ -8,7 +8,7 @@ This program parses mp4 file (avcc/avc1 format only), then parses NAL Unit, deco
 
 ![H264Dxva2Decoder](./Media/H264Dxva2Decoder.jpg)
 
-If you are not software enginer, or do not want the source code, you can try the executable. Feedbacks are welcome, especially with AMD GPU cards.
+If you are not software enginer, or do not want the source code, you can try the executable. Feedbacks are welcome, especially with AMD/ATI GPU cards.
 
 Minimal configuration :
 * Windows Vista/Windows7/Windows8/Windows10
@@ -59,6 +59,7 @@ Using the video player :
 * minimal GPU for NVIDIA cards -> Feature Set C (VP4) see https://en.wikipedia.org/wiki/Nvidia_PureVideo
 * the GPU decoding is OK with NVIDIA GeForce 700 series
 * the GPU decoding is OK with Intel HD Graphics 4000 and 510
+* For ATI cards, see issue : Dxva2Renderer.cpp - Line: 372 hr = E_NOINTERFACE. I've made a quick implementation to use IDirectXVideoProcessor instead of IDXVAHD_VideoProcessor. Feddback are welcome. The source code is in the directory SourceCodeForAtiCards : H264Dxva2DecoderSourceCodeForAtiCard.7z (Visual Studio Community 2017).
 
 ### ATOM
 * just uses the first video track found
